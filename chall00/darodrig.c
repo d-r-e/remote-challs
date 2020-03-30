@@ -19,7 +19,7 @@ char	*hv_rgb2hex(int r, int g, int b)
 	char result[7];
 	char caps[] = "0123456789abcdef";
 	if (r < 0 || g < 0 || b < 0 || r > 255 || g > 255 || b > 255)
-		return ("000000");
+		return (strdup("000000"));
 	
 	result[0] = caps[r / 16];
 	result[1] = caps[r % 16];
@@ -29,4 +29,9 @@ char	*hv_rgb2hex(int r, int g, int b)
 	result[5] = caps[b % 16];
 	result[6] = 0;
 	return (strdup(result));
+}
+
+int main(void)
+{
+	printf("%s\n", hv_rgb2hex(255,255,255));
 }
