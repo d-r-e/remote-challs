@@ -18,7 +18,7 @@ char	*hv_rgb2hex(int r, int g, int b)
 {
 	char result[7];
 	char caps[] = "0123456789abcdef";
-	if (r < 0 || g < 0 || b < 0)
+	if (r < 0 || g < 0 || b < 0 || r > 255 || g > 255 || b > 255)
 		return ("000000");
 	
 	result[0] = caps[r / 16];
