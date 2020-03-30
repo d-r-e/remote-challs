@@ -30,8 +30,3 @@ char	*hv_rgb2hex(int r, int g, int b)
 	result[6] = 0;
 	return (strdup(result));
 }
-
-int main(void)
-{
-	printf("%s\n", hv_rgb2hex(255,255,255));
-}
